@@ -120,29 +120,41 @@ def angle_to_pixel(angle):
     return input_center + angle * fov_scaled
 
 
-def equirectangular_projection(yy):
+def equirectangular_projection_rev(yy):
     return yy
 
 
-def mercator_projection(yy):
+def mercator_projection_rev(yy):
     return 2.0 * math.atan(math.e ** yy) - math.pi * 0.5
 
 
-def miller_projection(yy):
+def mercator_projection(lat):
+    return math.log(math.tan(0.5 * lat + math.pi / 4.0))
+
+
+def miller_projection_rev(yy):
     return 2.5 * math.atan(math.e ** (yy * 0.8)) - math.pi * 0.625
 
-projection = equirectangular_projection
+
+def miller_projection(lat):
+    return 1.25 * math.log(math.tan(0.4 * lat + math.pi / 4.0))
+
+
+projection_rev = equirectangular_projection_rev
 max_y_angle = max_lon
 
 if pr_str == "eq":
-    projection = equirectangular_projection
+    projection_rev = equirectangular_projection_rev
     max_y_angle = max_lon
+    target_y = target_lat
 elif pr_str == "mer":
-    projection = mercator_projection
-    max_y_angle = math.log(math.tan(0.5 * max_lon + math.pi / 4.0))
+    projection_rev = mercator_projection_rev
+    max_y_angle = mercator_projection(max_lon)
+    target_y = mercator_projection(target_lat)
 elif pr_str == "mil":
-    projection = miller_projection
-    max_y_angle = 1.25 * math.log(math.tan(0.4 * max_lon + math.pi / 4.0))
+    projection_rev = miller_projection_rev
+    max_y_angle = miller_projection(max_lon)
+    target_y = miller_projection(target_lat)
 
 
 max_x_angle = max_lon
@@ -173,7 +185,7 @@ for y in range(0, output_height):
         t0 = t1
         print(str(round(float(y) / output_height * 100.0, 1)) + "%")
 
-    lat = projection(y_mul * float(y) - y_d) - target_lat
+    lat = projection_rev(y_mul * float(y) - y_d - target_y)
 
     dec_z = math.sin(lat)
     cos_lat = math.cos(lat)
