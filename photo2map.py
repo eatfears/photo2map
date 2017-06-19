@@ -200,6 +200,7 @@ def worker(i, output_image_mutex):
     output_image_part = Image.new('RGB', (output_width, chunk_size))
     output_pixels_part = output_image_part.load()
 
+    input_image = Image.open(input_filename, 'r')
     input_pixels = input_image.load()
 
     for y in range(chunk_offset, next_chunk_offset):
