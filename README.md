@@ -62,5 +62,7 @@ optional arguments:
 </details>
 <details> 
   <summary>Sample GIF (7.26 MB)</summary>
+  
   ![animation](https://habrastorage.org/web/1ca/050/4f0/1ca0504f03044e59874e34dffc2f7f0e.gif)
+  
 </details>
