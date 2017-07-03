@@ -1,0 +1,37 @@
+{
+   "layers": {
+        "countries": {
+            "src": "4/ne_10m_admin_0_countries.shp"
+        },
+        "roads": {
+            "src": "RUS_rds/RUS_roads.shp"
+        },
+        "lakes": {
+            "src": "2/ne_10m_lakes.shp"
+        },
+        "coast": {
+            "src": "1/ne_10m_coastline.shp"
+        },
+        "rivers": {
+            "src": "3/ne_10m_rivers_lake_centerlines.shp"
+        }
+        
+        
+    },
+
+    "proj": {
+        "id": "mercator",
+        "lon0": "auto",
+        "lat0": "auto"
+    },
+    "bounds": {
+        "mode": "bbox", 
+        "data_spb_fix": [25.2009773141, 57.334038383, 36.042022686, 62.5461616168],
+        "data_spb_or": [24.9509773141, 57.334038383, 35.792022686, 62.5461616168],
+        "data_msk": [29.5418159712, 51.430449178, 45.803384029, 60.0589508216]
+    },
+    "export": {
+       "width": 2000,
+       "height": 2000
+    }
+}

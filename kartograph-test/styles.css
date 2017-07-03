@@ -1,0 +1,9 @@
+#roads {
+	stroke: red;
+}
+#adm {
+	stroke: green;
+}
+#rivers, #coast, #lakes {
+	stroke: blue;
+}

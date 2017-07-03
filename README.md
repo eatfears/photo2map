@@ -60,3 +60,7 @@ optional arguments:
   ![output image](https://hsto.org/web/e4a/1d7/f21/e4a1d7f21f0041678bfad0806f247830.jpg)
   
 </details>
+<details> 
+  <summary>Sample GIF (7.26 MB)</summary>
+  ![animation](https://habrastorage.org/web/1ca/050/4f0/1ca0504f03044e59874e34dffc2f7f0e.gif)
+</details>
