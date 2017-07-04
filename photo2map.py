@@ -7,16 +7,18 @@ import multiprocessing
 
 earth_r = 6371.0
 earth_geos_h = 35786.0
-electrol_lon = 76.11
-electrol_fov = 17.89
+electro_l2_lon = 76.11
+himawari_8_lon = 140.7
+electro_l2_fov = 17.89
+himawari_8_fov = 17.59
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-R", "--radius", help="Planet radius in kilometers (default " + str(earth_r) + ")",
                     type=float, default=earth_r)
 parser.add_argument("-H", "--height", help="Satellite height above surface (default " + str(earth_geos_h) + ")",
                     type=float, default=earth_geos_h)
-parser.add_argument("-slon", "--sat-longitude", help="Satellite longitude degrees (default " + str(electrol_lon) + ")",
-                    type=float, default=electrol_lon)
+parser.add_argument("-slon", "--sat-longitude", help="Satellite longitude degrees (default " + str(electro_l2_lon) + ")",
+                    type=float, default=electro_l2_lon)
 
 parser.add_argument("-i", "--input", help="Input image filename (default input.jpg)",
                     type=str, default="input.jpg")
@@ -37,10 +39,10 @@ parser.add_argument("-z", "--zoom", help="Image zoom factor (default 1.0)",
 parser.add_argument("-lat", "--latitude", help="Target latitude degrees (default 0.0)",
                     type=float, default=0.0)
 parser.add_argument("-lon", "--longitude", help="Target longitude degrees (default satellite)",
-                    type=float, default=electrol_lon)
+                    type=float, default=electro_l2_lon)
 
-parser.add_argument("-f", "--fov", help="FOV of input image (default " + str(electrol_fov) + ")",
-                    type=float, default=electrol_fov)
+parser.add_argument("-f", "--fov", help="FOV of input image (default " + str(electro_l2_fov) + ")",
+                    type=float, default=electro_l2_fov)
 parser.add_argument("-j", "--threads", help="Multithreading (default 1)",
                     type=int, default=1)
 
