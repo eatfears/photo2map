@@ -7,7 +7,7 @@ import multiprocessing
 
 earth_r = 6371.0
 earth_geos_h = 35786.0
-electrol_lon = 76.0
+electrol_lon = 76.11
 electrol_fov = 17.89
 
 parser = argparse.ArgumentParser()

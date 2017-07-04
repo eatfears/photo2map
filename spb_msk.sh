@@ -5,7 +5,7 @@ OUT=${IN}out/
 OUT_MAP=${OUT}map/
 
 COL_COR="-brightness-contrast 30x50"
-GIF_PARAM="-resize 500 -delay 20 -loop 0"
+GIF_PARAM="-resize 500 -delay 10 -loop 0"
 
 # -f 17.885
 
